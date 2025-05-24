@@ -1,10 +1,11 @@
-"use client";
+import styles from "./page.module.css";
 
-import { useBalance } from "@repo/store/balance";
 
-export default function() {
-  const balance = useBalance();
-  return <div>
-    hi there {balance}
-  </div>
+
+export default function Page(): JSX.Element {
+  return (
+    <main className={styles.main}>
+      <h1>This is the merchant app</h1>
+    </main>
+  );
 }
