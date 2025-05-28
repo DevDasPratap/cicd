@@ -21,13 +21,13 @@ jobs:
     - name: Build and Push Docker image
       uses: docker/build-push-action@v2
       with:
-        context: .
-        file: ./docker/Dockerfile.userApp
+        context: . # . means root folder
+        file: ./docker/Dockerfile.user
         push: true
-        tags: rglair/paytm-clone:latest  # Replace with your Docker Hub username and repository
+        tags: devdaspratap/week-18-nextapp:latest  # Replace with your Docker Hub username and repository
 
     - name: Verify Pushed Image
-      run: docker pull rglair/paytm-clone:latest  # Replace with your Docker Hub username and repository
+      run: docker pull devdaspratap/week-18-nextapp:latest  # Replace with your Docker Hub username and repository
 
       # comment the below portion to prevent the workflow from failing, will un-comment the below portion when my ec2 macine is running
 
